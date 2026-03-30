@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --section-bg: #ffffff;
+    --section-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.15);
+    --page-bg: #dfdfdf;
+  }
+
+  .dark {
+    --section-bg: #18181b;
+    --section-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.5);
+    --page-bg: #09090b;
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-up {
+  animation: fadeSlideUp 0.5s ease forwards;
+}
+
+.animate-fade-slide-down {
+  animation: fadeSlideDown 0.4s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.2s; opacity: 0; }
+.delay-3 { animation-delay: 0.3s; opacity: 0; }
+.delay-4 { animation-delay: 0.4s; opacity: 0; }
+
+/* Hover badges compétences */
+.skill-badge {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.skill-badge:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover cartes sections */
+.section-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.section-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 6px 8px 0px 0px rgba(0, 0, 0, 0.18);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
